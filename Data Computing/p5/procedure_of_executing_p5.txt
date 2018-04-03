@@ -1,0 +1,49 @@
+1.make a folder say p5 in documents
+
+2.open new file and save it as convert.x in p5
+
+3.write code inside it and keep it
+
+4.you have to install rpcgen
+
+5.write these commands on your terminal
+
+        7a@iseadmin-ThinkCentre-A55:~/Documents$ cd p5
+        7a@iseadmin-ThinkCentre-A55:~/Documents/p5$ rpcgen -a -C convert.x
+
+
+6.You'll get 6 files in that folder-p5
+
+7.Open convert_server.c and make required changes.
+
+8.Open convert_client.c and make minor changes - to take parameters from command line and print results.
+
+9.now Compile code using below command (Makefile.convert is generated from rpcgen)
+
+        7a@iseadmin-ThinkCentre-A55:~/Documents/p5$ make -f Makefile.convert
+
+10.Now open new terminal and write below comands
+
+        7a@iseadmin-ThinkCentre-A55:~$ cd Doc*
+        7a@iseadmin-ThinkCentre-A55:~/Documents$ cd p5
+
+        7a@iseadmin-ThinkCentre-A55:~/Documents/p5$  sudo ./convert_server
+        [sudo] password for 7a: 
+        
+11.now in old terminal only write this command
+
+        7a@iseadmin-ThinkCentre-A55:~/Documents/p5$ ./convert_client localhost 23
+
+12.you will get output lyk this
+
+        Equivalent Hexadecimal Number 17
+        Equivalent octal Number 27
+
+13. Instead of 23 you can write any number
+
+14.Additional info if u need type below command
+        7a@iseadmin-ThinkCentre-A55:~/Documents/p5$ rpcinfo
+in new terminal in case if u get any error and go as usual
+
+        
+
